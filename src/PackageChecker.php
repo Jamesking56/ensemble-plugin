@@ -38,7 +38,7 @@ class PackageChecker
     private static function createProcess($command, array $flags = [])
     {
         $cmd = [
-            '/usr/local/bin/composer',
+            env('ENSEMBLE_COMPOSER_PATH', '/usr/local/bin/composer'),
             $command,
             '--format=json',
         ];
